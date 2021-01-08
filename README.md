@@ -9,7 +9,7 @@ This is a personal gallery application that displays photos for others to see ba
 
 ### **Technologies Used**
 
-1) Python 3.8.2
+1) Python 3.8.6
 
 2) Git
 
