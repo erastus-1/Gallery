@@ -6,8 +6,8 @@ from cloudinary.models import CloudinaryField
 class Image(models.Model):
     title = models.CharField(max_length=100)
     category = models.ForeignKey('Category',default='', on_delete = models.CASCADE)
-    imageDescription = models.CharField(max_length=450)
-    image_location = models.ForeignKey('Location',default='', on_delete = models.CASCADE)
+    description = models.CharField(max_length=450)
+    location = models.ForeignKey('Location',default='', on_delete = models.CASCADE)
     image_url = CloudinaryField('image', blank=True)   
     date_uploaded = models.DateTimeField(auto_now_add=True)
 
