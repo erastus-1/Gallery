@@ -20,13 +20,12 @@
         </div>
        
         <!-- modal -->
-
         <div class="modal fade" id="{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-body">
                 <h3 class="modal-title text-center" id="title">{{image.title}}</h3>
-                <a href="#"><img src="{{image.image.url}}" class="img-responsive" alt="image" style="width: 100%; height: 250px;"></a>
+                <a href="#"><img src="{{image.image_url.url}}" class="img-responsive" alt="image" style="width: 100%; height: 250px;"></a>
                
                 <p class="text-center">{{image.title}}</p>
                 <p>Location: {{image.location}}</p>
@@ -36,20 +35,12 @@
               <div class="modal-footer">
                 <input type="text" value="{{image.image_url.url}}" id="copy" style="width:250px" class="form-control">                
                 <button class="btn btn-success btn-sm" onclick="copyLink('{{image.id}}.url')">Copy</button>
-                <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-                
+                <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>                
               </div>
             </div>
           </div>
-        </div>
-       
-      </div>
-  
-    </div>
-  
-    {% empty %}
-    <div class="row">
-      <h2 class="text-center">There No Images to display :-(</h2>
+        </div>       
+      </div>  
     </div>
     {% endfor %}
   
