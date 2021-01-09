@@ -2,41 +2,69 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Luckiest+Guy&display=swap" rel="stylesheet">
-
   {% if title %}
   <title>Photo Appy - {{title}}</title>
   {% else %}
-    <title> Photo Appy </title>
+  <title> Photo Appy </title>
   {% endif %}
 
   {% block styles %}
-    {% bootstrap_css %}
-    <link rel="stylesheet" href="{% static 'css/photos.css' %}">
-  {% endblock %}
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/photos.css' %}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Luckiest+Guy&display=swap" rel="stylesheet">
 
+  {% endblock %}
 </head>
+
 <body>
 
-    {% include "navbar.html" %}
+  {% include "navbar.html" %}
 
-    {% block content %} <h1 class='text-center'>Welcome to your favourite photo appy viewer</h1> {%endblock%}
+  {% block content %}
 
-    {% include "footer.html" %}
-    {% block scripts %}
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="{% static 'js/scripts.js' %}">
+  <div class="container h-100 d-flex" style="opacity: 0.5;">
+    <div class="jumbotron my-auto" style=" height:32vh">
+      <p class="text-center  animate__animated animate__bounce " style="font-family: 'Fugaz One', cursive;
+      font-family: 'Luckiest Guy', cursive;font-size: 20px;">Welcome to your favourite photo appy viewer. </p>
+      <p class="text-center  animate__animated animate__bounce " style="font-family: 'Fugaz One', cursive;
+      font-family: 'Luckiest Guy', cursive;font-size: 20px;">Where you can search for an images using the following categories <I>foodie, areas to
+          visit and motobikes.</I></p>
+    </div>
+  </div>
 
- {% bootstrap_javascript %}
-{% endblock %}
+  {%endblock%}
+  <hr>
+
+  <!-- 
+  <div class="container-fluid">
+    <footer class="text-center">
+      <div style='background-color:black; position:static; bottom:0%; width:100%; height:08vh' id="footer">
+        <p style='color:white; font-size: 20px; text-transform:capitalize;'>
+          <a href="https://web.facebook.com/Erass N stars" style="padding-left: 10em"><i class="fab fa-facebook-square"
+              style="color: light-blue;"></i></a>
+          <a href="https://github.com/erastus-1" style="padding-left: 02em"><i class="fab fa-github"
+              style="color: light-blue;"></i></a>
+          <a href="https://www.linkedin.com/feed/erastus kariuki" style="padding-left: 02em"><i class="fab fa-linkedin"
+              style="color: light-blue;"></i></a>
+          </br>
+        <strong>All content Copyright &copy 2021 Photo-Appy </strong>
+        </p>
+      </div>
+    </footer>
+  </div> -->
+  {% block scripts %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  {% bootstrap_javascript %}
+  {% endblock %}
 </body>
+
 </html>

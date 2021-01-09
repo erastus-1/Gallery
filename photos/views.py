@@ -24,5 +24,5 @@ def search_results(request):
         return render(request, 'all/search.html',{"message":message,"images": searched_images})
 
     else:
-        message = "You haven't searched for any term"
+        message = "You haven't searched for any image"
         return render(request, 'all/search.html',{"message":message})

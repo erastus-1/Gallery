@@ -2,44 +2,44 @@
 
 {% block content %} {{block.super}}
 
-<div class="row container-fluid content"></div>
-    <!-- Looping through images   -->
-    {% for image in images %}    
-      <!-- displaying images -->
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 thumbnails">
-        <div class='card'>
-          <div class="card-body">
-            <img src="{{image.image_url.url}}" class="img-responsive" alt="Image">
-          <br>
-            <a href="#" class="btn btn-primary btn-sm mt-3" data-toggle="modal" data-target="#{{image.id}}">check details</a>
-          </div>
-        </div>
-      </div> 
-       
-        <!-- modal -->
-        <div class="modal fade" id="{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-body">
-                <h3 class="modal-title text-center" id="title">{{image.title}}</h3>
-                <a href="#"><img src="{{image.image_url.url}}" class="img-responsive" alt="image" style="width: 100%; height: 250px;"></a>
-               
-                <p class="text-center">{{image.title}}</p>
-                <p>Description : {{image.description}}</p>
-                <p>Location: {{image.location}}</p>
-                <p>Posted on :{{image.date_uploaded}}</p>
-              </div>
-              <div class="modal-footer">
-                <input type="text" value="{{image.image_url.url}}" id="copy" style="width:250px" class="form-control">                
-                <button class="btn btn-success btn-sm" onclick="copyLink('{{image.id}}.url')">Copy</button>
-                <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>                
-              </div>
-            </div>
-          </div>
-        </div>        
+<div class="row container-fluid content" style="padding-top: 10px;">
+  <!-- Looping through images   -->
+  {% for image in images %}
+  <!-- displaying images -->
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 thumbnails">
+    <div class='card'>
+      <div class="card-body">
+        <img src="{{image.image_url.url}}" class="img-responsive" alt="Image" style="width: 100%; height: 250px;">
+        <br>
+        <a href="#" class="btn btn-primary btn-sm mt-3" data-toggle="modal" data-target="#{{image.id}}">check
+          details</a>
+      </div>
     </div>
-    {% endfor %}
-  
   </div>
-  
+
+  <!-- modal -->
+  <div class="modal fade" id="{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h3 class="modal-title text-center" id="title" style="font-family: 'Fugaz One', cursive;">{{image.title}}</h3>
+          <a href="#"><img src="{{image.image_url.url}}" class="img-responsive" alt="image"
+              style="width: 100%; height: 250px;"></a>
+
+          <p class="text-center" style="font-family: 'Fugaz One', cursive;">{{image.title}}</p>
+          <p style="font-family: 'Fugaz One', cursive;">  ABOUT THE IMAGE  : {{image.description}}</p>
+          <p style="font-family: 'Fugaz One', cursive;">LOCATION : {{image.location}}</p>
+          <p style="font-family: 'Fugaz One', cursive;">POSTED ON :{{image.date_uploaded}}</p>
+        </div>
+        <div class="modal-footer">
+          <input type="text" value="{{image.image_url.url}}" id="copy" style="width:250px" class="form-control">
+          <button class="btn btn-success btn-sm" onclick="copyLink('{{image.id}}.url')">Copy</button>
+          <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
 {% endblock %}
