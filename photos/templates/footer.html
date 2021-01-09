@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Dancing+Script=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href='https://fonts.googleapis.com/css?family=Carter+One&display' rel="stylesheet">
+
+  {% if title %}
+  <title>Photo Appy - {{title}}</title>
+  {% else %}
+    <title> Photo Appy </title>
+  {% endif %}
+
+  {% block styles %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/photos.css' %}">
+  {% endblock %}
+
+</head>
+<body>
+
+    {% include "navbar.html" %}
+
+    {% block content %} {%endblock%}
+
+<footer class="bg-dark" style="margin-top: 30px;">
+    <div class="text-center text-white" style="text-align: center; padding-top: 10px;">
+      <div class="footer">
+        <img src="{{url_for('static',filename='photos/social/facebook.png')}}">
+        <img src="{{url_for('static',filename='photos/social/pinterest.png')}}">
+        <img src="{{url_for('static',filename='photos/social/skype.png')}}">
+        <img src="{{url_for('static',filename='photos/social/twitter.png')}}">
+      </br>
+        <p>All content Copyright &copy 2021 Photo-Appy </p>
+      </div>
+    </div>
+  </footer>
+  {% block scripts %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{% bootstrap_javascript %}
+{% endblock %}
+</body>
+</html>
