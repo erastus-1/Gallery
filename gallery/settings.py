@@ -35,7 +35,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'photos.apps.PhotosConfig',
+    'photos',
+    'bootstrap3',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,11 +46,11 @@ INSTALLED_APPS = [
     'cloudinary'
 ]
 
-cloudinary.config( 
-  cloud_name = config('cloud_name'),
-  api_key = config('api_key'),
-  api_secret = config('api_secret'), 
-)
+# cloudinary.config( 
+#   cloud_name = config('cloud_name'),
+#   api_key = config('api_key'),
+#   api_secret = config('api_secret'), 
+# )
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
