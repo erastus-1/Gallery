@@ -6,6 +6,9 @@ import datetime as dt
 def home(request):
     return render(request, 'all/home.html')
 
+def about(request):
+    return render(request, 'all/about.html')
+
 def search_results(request):
 
     if 'images' in request.GET and request.GET["images"]:
