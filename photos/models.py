@@ -12,7 +12,7 @@ class Image(models.Model):
     date_uploaded = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.first_name
+        return self.title
 
     class Meta:
         ordering = ['date_uploaded']

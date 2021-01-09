@@ -46,11 +46,11 @@ INSTALLED_APPS = [
     'cloudinary'
 ]
 
-# cloudinary.config( 
-#   cloud_name = config('cloud_name'),
-#   api_key = config('api_key'),
-#   api_secret = config('api_secret'), 
-# )
+cloudinary.config( 
+  cloud_name = 'dna4zvvgn',
+  api_key = '189771367633795',
+  api_secret = '0ZHoI9TJhb2rK_R1dT0q8FmCeWo', 
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -75,6 +75,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -137,3 +138,5 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

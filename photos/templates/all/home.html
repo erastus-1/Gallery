@@ -12,7 +12,13 @@
       <!-- displaying News articles -->
       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
         <h2 class="text-center"> {{ image.title }} </h2>
-        
+        <p><img src="{{image.image_image.url}}" class="img-responsive" alt="Image"></p>
+        <p>DESCRIPTION : {{ image.description}}</p>
+        <p>LOCATION : {{ image.locatoin}}</p>
+        <p>CATEGORY : {{ image.category}}</p>
+        <p>posted on : {{ image.pub_date}}</p>
+        <p> URL: {{image.image_url}}</p>
+
       </div>
   
     </div>
