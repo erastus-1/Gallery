@@ -5,7 +5,7 @@ from cloudinary.models import CloudinaryField
 # Create your models here.
 class Image(models.Model):
     title = models.CharField(max_length=100)
-    category = models.ForeignKey('Category',default='', on_delete = models.CASCADE)
+    category = models.ManyToManyField('Category')
     description = models.CharField(max_length=450)
     location = models.ForeignKey('Location',default='', on_delete = models.CASCADE)
     image_url = CloudinaryField('image', blank=True)   
