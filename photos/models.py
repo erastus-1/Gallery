@@ -7,7 +7,7 @@ class Image(models.Model):
     title = models.CharField(max_length=100)
     category = models.ForeignKey('Category',default='', on_delete = models.CASCADE)
     imageDescription = models.CharField(max_length=450)
-    # image_location = models.ForeignKey('Location',default='', on_delete = models.CASCADE)
+    image_location = models.ForeignKey('Location',default='', on_delete = models.CASCADE)
     image_url = CloudinaryField('image', blank=True)   
     date_uploaded = models.DateTimeField(auto_now_add=True)
 
@@ -23,3 +23,9 @@ class Category(models.Model):
 
     def __str__(self):
         return self.category
+
+class Location(models.Model):
+    location = models.CharField(max_length =30)
+
+    def __str__(self):
+        return self.location
