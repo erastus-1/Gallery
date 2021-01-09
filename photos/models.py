@@ -18,6 +18,9 @@ class Image(models.Model):
     class Meta:
         ordering = ['date_uploaded']
 
+    def save_image(self):
+        self.save()
+
 class Category(models.Model):
     category = models.CharField(max_length =30)
 
