@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 import django_heroku
 import dj_database_url
+
 from decouple import config,Csv
 from pathlib import Path
 
@@ -28,10 +29,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '&7=vk#3!pek7xtetk^-e2#*aa%s^-e$s6iz*82@@gb_xhyaz)0'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+MODE=config("MODE", default="dev")
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = []
 
@@ -51,7 +51,7 @@ INSTALLED_APPS = [
 ]
 
 cloudinary.config( 
-  cloud_name = 'dna4zvvgn',
+  cloud_name = config('cloud_name'),
   api_key = config('api_key'),
   api_secret = config('api_secret'), 
 )
@@ -167,6 +167,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+print('DATABASES', DATABASES)
 
 # Configure Django App for Heroku.
 django_heroku.settings(locals())
