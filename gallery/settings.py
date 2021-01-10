@@ -45,7 +45,7 @@ INSTALLED_APPS = [
 
 cloudinary.config( 
   Cloud_name = config('Cloud_name'),
-  API_key = config('API_key'),
+  API_key = config('API_Key'),
   API_Secret = config('API_Secret'), 
 )
 
