@@ -10,7 +10,7 @@
       <hr>
     </div>
   </div>
- 
+
 
 
   <div class="row container-fluid content">
@@ -20,13 +20,13 @@
 
       <div class="card">
         <div class="card-body">
-          <img src="{{galleryImage.image_url.url}}" class="img-fluid img-thumbnail img-responsive " alt="image"
-            data-toggle="modal" data-target="#{{galleryImage.id}}" style="height:40vh; width:40vw" />
+          <img src="{{Image.image_url.url}}" class="img-fluid img-thumbnail img-responsive " alt="image"
+            data-toggle="modal" data-target="#{{Image.id}}" style="height:40vh; width:40vw" />
         </div>
       </div>
     </div>
 
-    <div class="modal fade" id="{{galleryImage.id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="{{Image.id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -45,10 +45,10 @@
                   CATEGORY:</strong></span>{{image.category}}
             </p>
             <p class="text-left" style="font-size: 20px; font-family: 'Stylish', sans-serif;">
-              <strong>ABOUT THE IMAGE:</strong>{{imageDescription}}
+              <strong>ABOUT THE IMAGE:</strong>{{image.description}}
             </p>
             <p class="text-left" style="font-size: 20px; font-family: 'Stylish', sans-serif;">
-              <strong>LOCATION WHERE TAKEN:</strong> {image.image_location}}
+              <strong>LOCATION WHERE TAKEN:</strong> {image.location}}
             </p>
             <p class="text-left" style="font-size: 20px; font-family: 'Stylish', sans-serif;">
               <strong>UPLOADED ON:</strong> {{image.date_uploaded}}
@@ -57,10 +57,10 @@
           </div>
           <div class="modal-footer">
 
-            <input class="form-control input-md responsive" type="text" value="{{galleryImage.image_url.url}}"
-              id="{{galleryImage.id}}.url" />
+            <input class="form-control input-md responsive" type="text" value="{{Image.image_url.url}}"
+              id="{{Image.id}}.url" />
             <br>
-            <button type="button" class="btn btn-success " onclick="copy('{{galleryImage.image_url.url}}')">Copy
+            <button type="button" class="btn btn-success " onclick="copy('{{Image.image_url.url}}')">Copy
               Link</button>
 
             <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>

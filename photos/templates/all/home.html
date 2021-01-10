@@ -2,12 +2,12 @@
 
 {% block content %} {{block.super}}
 
-<div class="row container-fluid content" style="padding-top: 10px;">
+<div class="row container-fluid content">
   <!-- Looping through images   -->
   {% for image in images %}
   <!-- displaying images -->
   <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 thumbnails">
-    <div class='card'>
+    <div class='card' style="padding-top: 10px;">
       <div class="card-body">
         <img src="{{image.image_url.url}}" class="img-responsive" alt="Image" style="width: 100%; height: 250px;">
         <br>
@@ -22,20 +22,24 @@
     aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <div class="modal-body">
-          <h3 class="modal-title text-center" id="title" style="font-family: 'Fugaz One', cursive;">{{image.title}}</h3>
-          <a href="#"><img src="{{image.image_url.url}}" class="img-responsive" alt="image"
-              style="width: 100%; height: 250px;"></a>
+        <div class="modal-body" style="color: blue;">
+          <h3 class="modal-title text-center" id="title" style="font-family: 'Fugaz One', cursive; font-size: 35px;">{{image.title}}</h3>
+          <a href="#"><img src="{{image.image_url.url}}" alt=""
+              style="width: 100%;"></a>
 
-          <p class="text-center" style="font-family: 'Fugaz One', cursive;">{{image.title}}</p>
-          <p style="font-family: 'Fugaz One', cursive;">  ABOUT THE IMAGE  : {{image.description}}</p>
-          <p style="font-family: 'Fugaz One', cursive;">LOCATION : {{image.location}}</p>
-          <p style="font-family: 'Fugaz One', cursive;">POSTED ON :{{image.date_uploaded}}</p>
+          <p class="text-center" style="font-family: 'Fugaz One', cursive;  font-size: 20px;">{{image.title}}</p>
+          <p style="font-family: 'Fugaz One', cursive; font-size: 20px;"> ABOUT THE IMAGE : {{image.description}}</p>
+          <p style="font-family: 'Fugaz One', cursive; font-size: 20px;">LOCATION : {{image.location}}</p>
+          <p style="font-family: 'Fugaz One', cursive; font-size: 20px;">POSTED ON :{{image.date_uploaded}}</p>
         </div>
         <div class="modal-footer">
-          <input type="text" value="{{image.image_url.url}}" id="copy" style="width:250px" class="form-control">
-          <button class="btn btn-success btn-sm" onclick="copyLink('{{image.id}}.url')">Copy</button>
-          <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+          <input class="form-control input-md responsive" type="text" value="{{image.image_url.url}}"
+            id="{{image.id}}.url" />
+          <br>
+          <button type="button" class="btn btn-success " onclick="copy('{{image.image_url.url}}')">Copy
+            Link</button>
+          <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+
         </div>
       </div>
     </div>
