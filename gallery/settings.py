@@ -51,7 +51,7 @@ INSTALLED_APPS = [
 ]
 
 cloudinary.config( 
-  cloud_name = config('cloud_name'),
+  cloud_name = 'dna4zvvgn',
   api_key = config('api_key'),
   api_secret = config('api_secret'), 
 )
