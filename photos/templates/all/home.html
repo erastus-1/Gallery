@@ -6,10 +6,11 @@
   <!-- Looping through images   -->
   {% for image in images %}
   <!-- displaying images -->
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 thumbnails">
-    <div class='card' style="padding-top: 10px;">
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 thumbnails"
+  style="padding-left: 40px; margin-bottom: 10vh; height: 40vh;">
+    <div class='card'>
       <div class="card-body">
-        <img src="{{image.image_url.url}}" class="img-responsive" alt="Image" style="width: 100%; height: 250px;">
+        <img src="{{image.image_url.url}}" class="img-responsive" alt="Image" style="width: 40vw; height: 40vh;">
         <br>
         <a href="#" class="btn btn-primary btn-sm mt-3" data-toggle="modal" data-target="#{{image.id}}">check
           details</a>
@@ -24,9 +25,7 @@
       <div class="modal-content">
         <div class="modal-body" style="color: blue;">
           <h3 class="modal-title text-center" id="title" style="font-family: 'Fugaz One', cursive; font-size: 35px;">{{image.title}}</h3>
-          <a href="#"><img src="{{image.image_url.url}}" alt=""
-              style="width: 100%;"></a>
-
+          <a href="#"><img src="{{image.image_url.url}}" alt="" style="width: 100%;"></a>
           <p class="text-center" style="font-family: 'Fugaz One', cursive;  font-size: 20px;">{{image.title}}</p>
           <p style="font-family: 'Fugaz One', cursive; font-size: 20px;"> ABOUT THE IMAGE : {{image.description}}</p>
           <p style="font-family: 'Fugaz One', cursive; font-size: 20px;">LOCATION : {{image.location}}</p>
