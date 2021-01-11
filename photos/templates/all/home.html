@@ -7,10 +7,10 @@
   {% for image in images %}
   <!-- displaying images -->
   <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 thumbnails"
-  style="padding-left: 20px; margin-bottom: 15vh; height: 40vh;">
+  style="padding-left: 20px; margin-top: 15vh; height: 40vh; ">
     <div class='card'>
       <div class="card-body">
-        <img src="{{image.image_url.url}}" class="img-responsive" alt="Image" style="width: 40vw; height: 40vh;">
+        <img src="{{image.image_url.url}}" class=" img-fluid img-thumbnail img-responsive" alt="" style="width: 40vw; height: 40vh;">
         <br>
         <a href="#" class="btn btn-primary btn-sm mt-3" data-toggle="modal" data-target="#{{image.id}}">check
           details</a>
@@ -43,6 +43,6 @@
       </div>
     </div>
   </div>
-</div>
 {% endfor %}
+</div>
 {% endblock %}
