@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http  import HttpResponse
-from .models import Image,Category
+from .models import Image
 from django.db import models
 import datetime as dt
 
@@ -16,12 +16,12 @@ def about(request):
 
 def search_results(request):
 
-    if 'category' in request.GET and request.GET["category"]:
-        search_term = request.GET.get("category")
-        searched_categories = Category.search_by_title(search_term)
+    if 'images' in request.GET and request.GET["images"]:
+        search_term = request.GET.get("image")
+        searched_images = Image.search_by_category(search_term)
         message = f"{search_term}"
 
-        return render(request, 'all/search.html',{"message":message,"categories": searched_categories})
+        return render(request, 'all/search.html',{"message":message,"images": searched_images})
 
     else:
         message = "You haven't searched for any image"
