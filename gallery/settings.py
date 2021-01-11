@@ -43,10 +43,11 @@ INSTALLED_APPS = [
     'cloudinary'
 ]
 
-cloudinary.config( 
-  CLOUD_NAME = config('cloud_name'),
-  API_KEY = config('api_key'),
-  API_SECRET = config('api_secret'), 
+cloudinary.config(   
+  cloud_name = 'dna4zvvgn',
+  api_key = '189771367633795',
+  api_secret = '0ZHoI9TJhb2rK_R1dT0q8FmCeWo', 
+
 )
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
