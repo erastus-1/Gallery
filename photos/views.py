@@ -16,12 +16,12 @@ def about(request):
 
 def search_results(request):
 
-    if 'images' in request.GET and request.GET["images"]:
-        search_term = request.GET.get("image")
-        searched_images = Image.search_by_category(search_term)
+    if 'category' in request.GET and request.GET["category"]:
+        search_term = request.GET.get("category")
+        searched_categories = Category.search_by_category(search_term)
         message = f"{search_term}"
 
-        return render(request, 'all/search.html',{"message":message,"images": searched_images})
+        return render(request, 'all/search.html',{"message":message,"categories": searched_categories})
 
     else:
         message = "You haven't searched for any image"
