@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http  import HttpResponse
-from .models import Image
+from .models import Image,Category
 from django.db import models
 import datetime as dt
 
